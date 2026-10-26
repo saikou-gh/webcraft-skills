@@ -1,0 +1,17 @@
+{
+  "name": "@webcraft-skills/animation-capture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portable sequential browser frame capture for motion analysis.",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "check": "node --check capture-animation.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "puppeteer": "^25.12.0"
+  }
+}

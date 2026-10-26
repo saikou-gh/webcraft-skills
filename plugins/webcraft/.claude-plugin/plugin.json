@@ -1,0 +1,24 @@
+{
+  "name": "webcraft",
+  "version": "1.0.0",
+  "description": "Portable workflows for evidence-driven website recreation, browser capture, and frontend quality review.",
+  "author": {
+    "name": "saikou-gh",
+    "email": "saikou-gh@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/saikou-gh/webcraft-skills#readme",
+  "repository": "https://github.com/saikou-gh/webcraft-skills",
+  "license": "MIT",
+  "keywords": [
+    "webcraft",
+    "website-replication",
+    "frontend",
+    "visual-fidelity",
+    "animation",
+    "webgl",
+    "browser-games"
+  ],
+  "skills": [
+    "./skills/"
+  ]
+}

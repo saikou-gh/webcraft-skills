@@ -1,0 +1,51 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@1e60f620b9541d8bfc5cbbd9b9c32b8c48c85c5c # v4
+        with:
+          node-version: "22.12.0"
+      - run: python3 scripts/validate.py
+      - run: npm ci --prefix plugins/webcraft/skills/asset-inspector/scripts
+      - run: npm ci --prefix plugins/webcraft/skills/animation-capture/scripts
+      - run: node --check plugins/webcraft/skills/asset-inspector/scripts/asset-inspector.js
+      - run: node --check plugins/webcraft/skills/animation-capture/scripts/capture-animation.js
+      - run: node --check plugins/webcraft/shared/safe-browser-proxy.js
+      - run: npm test --prefix plugins/webcraft/skills/asset-inspector/scripts
+      - run: npm test --prefix plugins/webcraft/skills/animation-capture/scripts
+      - run: node --test plugins/webcraft/shared/tests/*.test.js
+      - name: Browser smoke test
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 --directory tests/fixtures >"${RUNNER_TEMP}/webcraft-http.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in {1..30}; do
+            if curl -fsS http://127.0.0.1:8765/demo.html >/dev/null; then
+              break
+            fi
+            sleep 0.1
+          done
+          node plugins/webcraft/skills/asset-inspector/scripts/asset-inspector.js \
+            http://127.0.0.1:8765/demo.html \
+            --allow-private-network \
+            --out="${RUNNER_TEMP}/asset-report"
+          node plugins/webcraft/skills/animation-capture/scripts/capture-animation.js \
+            http://127.0.0.1:8765/demo.html \
+            --allow-private-network \
+            --frames=2 \
+            --interval=50 \
+            --wait=100 \
+            --out="${RUNNER_TEMP}/animation-frames"

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title description">
+  <title id="title">WebCraft</title>
+  <desc id="description">A luminous woven W inside a browser window.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16152f"/>
+      <stop offset="0.55" stop-color="#362c82"/>
+      <stop offset="1" stop-color="#167b83"/>
+    </linearGradient>
+    <linearGradient id="thread" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a99cff"/>
+      <stop offset="0.5" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#6ff3dc"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="224" fill="url(#background)"/>
+  <rect x="146" y="184" width="732" height="656" rx="62" fill="#0d1024" fill-opacity="0.62" stroke="#ffffff" stroke-opacity="0.18" stroke-width="10"/>
+  <path d="M146 308h732" stroke="#ffffff" stroke-opacity="0.18" stroke-width="10"/>
+  <circle cx="218" cy="246" r="18" fill="#a99cff"/>
+  <circle cx="274" cy="246" r="18" fill="#6ff3dc"/>
+  <circle cx="330" cy="246" r="18" fill="#ffffff" fill-opacity="0.7"/>
+  <g fill="none" stroke="url(#thread)" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <path d="M278 430l118 254 116-212 116 212 118-254" stroke-width="42"/>
+    <path d="M278 430l118 178 116-136 116 136 118-178" stroke-width="16" stroke-opacity="0.75"/>
+  </g>
+  <circle cx="512" cy="472" r="26" fill="#ffffff"/>
+</svg>

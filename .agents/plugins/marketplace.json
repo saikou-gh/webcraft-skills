@@ -1,0 +1,23 @@
+{
+  "name": "webcraft-skills",
+  "interface": {
+    "displayName": "WebCraft Skills"
+  },
+  "plugins": [
+    {
+      "name": "webcraft",
+      "source": {
+        "source": "local",
+        "path": "./plugins/webcraft"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE",
+        "products": [
+          "CODEX"
+        ]
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

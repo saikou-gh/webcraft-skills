@@ -1,0 +1,44 @@
+{
+  "name": "webcraft",
+  "version": "1.0.0",
+  "description": "Portable workflows for evidence-driven website recreation, browser capture, and frontend quality review.",
+  "author": {
+    "name": "saikou-gh",
+    "email": "saikou-gh@users.noreply.github.com",
+    "url": "https://github.com/saikou-gh"
+  },
+  "homepage": "https://github.com/saikou-gh/webcraft-skills#readme",
+  "repository": "https://github.com/saikou-gh/webcraft-skills",
+  "license": "MIT",
+  "keywords": [
+    "webcraft",
+    "website-replication",
+    "frontend",
+    "visual-fidelity",
+    "animation",
+    "webgl",
+    "browser-games"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "WebCraft",
+    "shortDescription": "Recreate and review web experiences with evidence-driven workflows",
+    "longDescription": "Recreate websites, browser games, and 3D web experiences; inventory assets, capture motion, and review visual fidelity and frontend source quality with portable, provider-neutral workflows.",
+    "developerName": "saikou-gh",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/saikou-gh/webcraft-skills",
+    "defaultPrompt": [
+      "Recreate this website in the current repository and verify desktop and mobile fidelity.",
+      "Review this frontend for craft quality, accessibility, and maintainability."
+    ],
+    "brandColor": "#6D5EF8",
+    "composerIcon": "./icon.svg",
+    "logo": "./icon.png",
+    "screenshots": []
+  }
+}

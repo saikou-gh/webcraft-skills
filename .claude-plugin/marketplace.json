@@ -1,0 +1,38 @@
+{
+  "name": "webcraft-skills",
+  "owner": {
+    "name": "saikou-gh",
+    "url": "https://github.com/saikou-gh"
+  },
+  "metadata": {
+    "description": "Portable skills for evidence-driven website recreation, browser capture, and frontend quality review.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "webcraft",
+      "source": "./plugins/webcraft",
+      "version": "1.0.0",
+      "description": "Seven portable skills for recreating websites and browser games, auditing assets and motion, handling WebGL work, and reviewing frontend fidelity and code quality.",
+      "author": {
+        "name": "saikou-gh",
+        "email": "saikou-gh@users.noreply.github.com"
+      },
+      "homepage": "https://github.com/saikou-gh/webcraft-skills#readme",
+      "repository": "https://github.com/saikou-gh/webcraft-skills",
+      "license": "MIT",
+      "strict": true,
+      "keywords": [
+        "webcraft",
+        "website-replication",
+        "frontend",
+        "visual-fidelity",
+        "animation",
+        "webgl",
+        "browser-games",
+        "accessibility",
+        "performance"
+      ]
+    }
+  ]
+}
